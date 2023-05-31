@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add_Movie</title>
+</head>
+<body>
+<form th:method="POST" th:action="@{/movies}" th:object="${movie}">
+    <label for="title">Enter title: </label>
+    <input type="text" th:field="*{title}" id="title"/>
+    <div style="color: darkred" th:if="${#fields.hasErrors('title')}" th:errors="*{title}">Error</div>
+    <br/>
+    <label for="director">Enter author's name: </label>
+    <input type="text" th:field="*{director}" id="director"/>
+    <div style="color: darkred" th:if="${#fields.hasErrors('director')}" th:errors="*{director}">Error</div>
+    <br/>
+    <label for="yearOfProduction">Enter year of production: </label>
+    <input type="text" th:field="*{yearOfProduction}" id="yearOfProduction"/>
+    <div style="color: darkred" th:if="${#fields.hasErrors('yearOfProduction')}" th:errors="*{yearOfProduction}">Error</div>
+    <br/>
+    <hr/>
+    <input type="submit" value="Save"/>
+</form>
+</body>
+</html>
