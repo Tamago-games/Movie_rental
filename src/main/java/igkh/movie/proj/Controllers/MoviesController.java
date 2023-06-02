@@ -1,7 +1,9 @@
 package igkh.movie.proj.Controllers;
 
 import igkh.movie.proj.DAO.MovieDAO;
+import igkh.movie.proj.DAO.PersonDAO;
 import igkh.movie.proj.models.Movie;
+import igkh.movie.proj.models.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,15 +11,18 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/movies")
 public class MoviesController {
     private final MovieDAO movieDAO;
+    private final PersonDAO personDAO;
 
     @Autowired
-    public MoviesController(MovieDAO movieDAO) {
+    public MoviesController(MovieDAO movieDAO, PersonDAO personDAO) {
         this.movieDAO = movieDAO;
+        this.personDAO = personDAO;
     }
 
     @GetMapping()
@@ -27,8 +32,13 @@ public class MoviesController {
     }
 
     @GetMapping("/{id}")
-    public String show(Model model, @PathVariable("id") int id){
+    public String show(Model model, @PathVariable("id") int id, @ModelAttribute("person") Person person){
         model.addAttribute("movie", movieDAO.show(id));
+        Optional<Person> owners = movieDAO.getMovie(id);
+        if(owners.isPresent())
+            model.addAttribute("owner", owners.get());
+        else
+            model.addAttribute("people", personDAO.index());
         return "/movies/show";
     }
 
@@ -63,5 +73,17 @@ public class MoviesController {
     public String delete(@PathVariable("id") int id){
         movieDAO.delete(id);
         return "redirect:/movies";
+    }
+
+    @PatchMapping("/{id}/free")
+    public String free(@PathVariable("id") int id){
+        movieDAO.freeBook(id);
+        return "redirect:/movies/" + id;
+    }
+
+    @PatchMapping("/{id}/give")
+    public String give(@PathVariable("id") int id, @ModelAttribute("person") Person person){
+        movieDAO.giveABook(id, person);
+        return "redirect:/movies/" + id;
     }
 }

@@ -5,13 +5,31 @@
     <title>Movie</title>
 </head>
 <body>
-<p th:text="${movie.getTitle()}">Value</p>
-<p th:text="${movie.getDirector()}">Value</p>
-<p th:text="${movie.getYearOfProduction()}">Value</p>
-<a th:href="@{/movies/{id}/edit(id=${movie.getId()})}">Edit</a>
+<p th:text="${movie.getTitle() + ', ' + movie.getDirector() + ', ' + movie.getYearOfProduction()}">Value</p>
+<div th:if="${owner}">
+    <span th:text="${owner.getName()}">Name</span> <span> has the movie now.</span>
+    <form th:method="PATCH" th:action="@{/movies/{id}/free(id=${movie.getId()})}">
+        <input type="submit" value="Free movie"/>
+    </form>
+</div>
+
+<div th:if="${people}">
+    <span>This movie is free. Choose a people: </span>
+    <form th:method="PATCH" th:action="@{/movies/{id}/give(id=${movie.getId()})}">
+        <label for="person">Chose a people: ></label>
+        <select th:object="${person}" th:field="*{id}" id="person">
+            <option th:each="person : ${people}" th:value="${person.getId()}" th:text="${person.getName()}"></option>
+        </select>
+        <input type="submit" value="Add"/>
+    </form>
+</div>
+<hr/>
+<form th:method="GET" th:action="@{/movies/{id}/edit(id=${movie.getId()})}">
+    <input type="submit" value="Edit"/>
+</form>
 <br/>
 <hr/>
-<form th:method="DELETE" th:action="@{/movies/{id}(id=${movie.getId()})">
+<form th:method="DELETE" th:action="@{/movies/{id}(id=${movie.getId()})}">
     <input type="submit" value="Delete"/>
 </form>
 </body>

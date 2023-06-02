@@ -1,11 +1,13 @@
 package igkh.movie.proj.DAO;
 
+import igkh.movie.proj.models.Movie;
 import igkh.movie.proj.models.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Optional;
 
 @Component
 public class PersonDAO {
@@ -18,6 +20,10 @@ public class PersonDAO {
 
     public List<Person> index(){
         return jdbcTemplate.query("SELECT * FROM person", new PersonMapper());
+    }
+
+    public List<Movie> personsBook(int id){
+        return jdbcTemplate.query("SELECT * FROM movie WHERE person_id=?", new Object[]{id}, new MovieMapper());
     }
 
     public Person show(int id){
@@ -37,5 +43,10 @@ public class PersonDAO {
 
     public void delete(int id){
         jdbcTemplate.update("DELETE FROM person WHERE id=?", id);
+    }
+
+    public Optional<Person> getPersonName(String name){
+        return jdbcTemplate.query("SELECT * FROM person WHERE name=?", new Object[]{name}, new PersonMapper())
+                .stream().findAny();
     }
 }

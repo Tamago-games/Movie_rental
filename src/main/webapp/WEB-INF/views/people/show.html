@@ -5,13 +5,26 @@
     <title>Person</title>
 </head>
 <body>
-<p th:text="${person.getName()}">User name</p>
-<p th:text="${person.getYearOfBirth()}">User year of birth</p>
-<a th:href="@{/people/{id}/edit(id=${person.getId()})}">Edit</a>
+<p th:text="${person.getName() + ', ' + person.getYearOfBirth()}">User name</p>
+<div th:if="${movies.size() == 0}">
+    <p>Movie-list is empty</p>
+</div>
+<div th:unless="${movies.size() == 0}" th:each="movie : ${movies}">
+    <p style="font-family: 'Apple SD Gothic Neo'">Movies: </p>
+    <td th:each="movie : ${movies}">
+        <p th:text="${movie.getTitle() + ', ' + movie.getDirector() + ', ' + movie.getYearOfProduction()}">Test</p>
+    </td>
+</div>
+<!--<p th:text="${person.getYearOfBirth()}">User year of birth</p>
+<a th:href="@{/people/{id}/edit(id=${person.getId()})}">Edit</a>-->
 <br/>
 <hr/>
+<form th:method="GET" th:action="@{/people/{id}/edit(id=${person.getId()})}">
+    <input type="submit" value="Edit Reader">
+</form>
+<br/>
 <form th:method="DELETE" th:action="@{/people/{id}(id=${person.getId()})}">
-    <input type="submit" value="Delete"/>
+    <input type="submit" value="Delete reader"/>
 </form>
 </body>
 </html>

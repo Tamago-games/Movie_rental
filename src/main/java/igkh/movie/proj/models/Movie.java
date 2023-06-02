@@ -9,7 +9,6 @@ import javax.validation.constraints.Size;
 
 public class Movie {
     private int id;
-    private int person_id;
 
     @NotEmpty(message = "Title shouldn't be empty.")
     @Size(min=2, max=100, message = "Title should be between 2 and 30 characters.")
@@ -26,9 +25,8 @@ public class Movie {
     public Movie() {
     }
 
-    public Movie(int id, int person_id, String title, String director, int yearOfProduction) {
+    public Movie(int id, String title, String director, int yearOfProduction) {
         this.id = id;
-        this.person_id = person_id;
         this.title = title;
         this.director = director;
         this.yearOfProduction = yearOfProduction;
@@ -42,13 +40,6 @@ public class Movie {
         this.id = id;
     }
 
-    public int getPerson_id() {
-        return person_id;
-    }
-
-    public void setPerson_id(int person_id) {
-        this.person_id = person_id;
-    }
 
     public String getTitle() {
         return title;

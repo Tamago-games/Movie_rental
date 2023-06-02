@@ -10,31 +10,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5556f3d4-310d-4a94-87d7-e43a72c3e573" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/igkh/movie/proj/Controllers/MoviesController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/igkh/movie/proj/Controllers/PeopleController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/igkh/movie/proj/DAO/MovieDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/igkh/movie/proj/DAO/MovieMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/igkh/movie/proj/DAO/PersonDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/igkh/movie/proj/DAO/PersonMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/igkh/movie/proj/config/DispatcherServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/igkh/movie/proj/config/SpringConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/igkh/movie/proj/models/Movie.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/igkh/movie/proj/models/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/database.properties.origin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/movies/edit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/movies/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/movies/new.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/movies/show.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/edit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/new.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/show.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/igkh/movie/proj/util/PersonValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a76c2b7e-c479-4f34-b6ff-e265ecd5d820.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a76c2b7e-c479-4f34-b6ff-e265ecd5d820.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a76c2b7e-c479-4f34-b6ff-e265ecd5d820/storage_v2/_src_/database/booker_db.B7gDeQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a76c2b7e-c479-4f34-b6ff-e265ecd5d820/storage_v2/_src_/database/booker_db.B7gDeQ/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/igkh/movie/proj/Controllers/MoviesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/igkh/movie/proj/Controllers/MoviesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/igkh/movie/proj/Controllers/PeopleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/igkh/movie/proj/Controllers/PeopleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/igkh/movie/proj/DAO/MovieDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/igkh/movie/proj/DAO/MovieDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/igkh/movie/proj/DAO/PersonDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/igkh/movie/proj/DAO/PersonDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/igkh/movie/proj/models/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/igkh/movie/proj/models/Movie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/movies/show.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/movies/show.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/show.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/show.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,6 +65,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -183,7 +171,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1685375756928</updated>
-      <workItem from="1685375757972" duration="23371000" />
+      <workItem from="1685375757972" duration="54833000" />
     </task>
     <servers />
   </component>
