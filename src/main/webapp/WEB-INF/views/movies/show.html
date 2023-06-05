@@ -27,6 +27,7 @@
 <form th:method="GET" th:action="@{/movies/{id}/edit(id=${movie.getId()})}">
     <input type="submit" value="Edit"/>
 </form>
+<br/>
 <form th:method="DELETE" th:action="@{/movies/{id}(id=${movie.getId()})}">
     <input type="submit" value="Delete"/>
 </form>
