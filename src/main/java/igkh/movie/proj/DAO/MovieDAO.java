@@ -46,11 +46,11 @@ public class MovieDAO {
                 new Object[]{id}, new PersonMapper()).stream().findAny();
     }
 
-    public void freeBook(int id){
+    public void freeMovie(int id){
         jdbcTemplate.update("UPDATE movie SET person_id=null WHERE id=?", id);
     }
 
-    public void giveABook(int id, Person person){
+    public void giveAMovie(int id, Person person){
         jdbcTemplate.update("UPDATE movie SET person_id=? WHERE id=?", person.getId(), id);
     }
 }

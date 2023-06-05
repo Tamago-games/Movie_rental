@@ -77,13 +77,13 @@ public class MoviesController {
 
     @PatchMapping("/{id}/free")
     public String free(@PathVariable("id") int id){
-        movieDAO.freeBook(id);
+        movieDAO.freeMovie(id);
         return "redirect:/movies/" + id;
     }
 
     @PatchMapping("/{id}/give")
     public String give(@PathVariable("id") int id, @ModelAttribute("person") Person person){
-        movieDAO.giveABook(id, person);
+        movieDAO.giveAMovie(id, person);
         return "redirect:/movies/" + id;
     }
 }

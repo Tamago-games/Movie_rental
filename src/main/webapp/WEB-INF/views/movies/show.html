@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Movie</title>
 </head>
-<body>
+<body style="font-family: 'Apple SD Gothic Neo'">
 <p th:text="${movie.getTitle() + ', ' + movie.getDirector() + ', ' + movie.getYearOfProduction()}">Value</p>
 <div th:if="${owner}">
     <span th:text="${owner.getName()}">Name</span> <span> has the movie now.</span>
@@ -14,9 +14,9 @@
 </div>
 
 <div th:if="${people}">
-    <span>This movie is free. Choose a people: </span>
+    <span>This movie is free.</span>
     <form th:method="PATCH" th:action="@{/movies/{id}/give(id=${movie.getId()})}">
-        <label for="person">Chose a people: ></label>
+        <label for="person">Chose a people: </label>
         <select th:object="${person}" th:field="*{id}" id="person">
             <option th:each="person : ${people}" th:value="${person.getId()}" th:text="${person.getName()}"></option>
         </select>
@@ -27,8 +27,6 @@
 <form th:method="GET" th:action="@{/movies/{id}/edit(id=${movie.getId()})}">
     <input type="submit" value="Edit"/>
 </form>
-<br/>
-<hr/>
 <form th:method="DELETE" th:action="@{/movies/{id}(id=${movie.getId()})}">
     <input type="submit" value="Delete"/>
 </form>
